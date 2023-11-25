@@ -20,3 +20,8 @@ showTodoList();
 removeTodoList(1);
 
 showTodoList();
+
+$result = removeTodoList(2);
+var_dump($result);
+
+showTodoList();

@@ -9,3 +9,5 @@ require_once "view/ViewAddTodoList.php";
 require_once "view/ViewRemoveTodoList.php";
 
 echo "Aplikasi Todolist" . PHP_EOL;
+
+viewShowTodoList();

@@ -5,6 +5,6 @@ require_once "BusinessLogic/AddTodoList.php";
 
 addTodoList("olis");
 addTodoList("yusuf");
-addTodoList("sky");
+addTodoList("joni");
 
 var_dump($todoList);

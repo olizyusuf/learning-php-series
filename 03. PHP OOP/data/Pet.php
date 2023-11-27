@@ -7,7 +7,7 @@ namespace data;
 
 abstract class Pet
 {
-    public string $name;
+    public string $name; 
 
     abstract function run(): void;
 }

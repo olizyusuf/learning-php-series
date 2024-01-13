@@ -1,4 +1,2 @@
 <?php
-sayHiProgrammer(new Programmer("olis"));
-sayHiProgrammer(new FrontEndProgrammer("olis"));
-sayHiProgrammer(new BackEndProgrammer("olis"));
+"2020-12-01 10:10:10";

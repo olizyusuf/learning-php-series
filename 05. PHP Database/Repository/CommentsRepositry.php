@@ -25,7 +25,7 @@ namespace Repositry {
 
         public function insert(Comments $comments): Comments
         {
-            $sql = "INSERT INTO comments(email, comment) VALUES (?,?);";
+            $sql = "INSERT INTO comments(email, comment) VALUES (?,?)";
             $statment = $this->connection->prepare($sql);
             $statment->execute([$comments->getEmail(), $comments->getComment()]);
 
@@ -37,13 +37,29 @@ namespace Repositry {
 
         public function findById(?int $id): Comments
         {
-            return new Comments();
+            $sql = "SELECT * FROM comments WHERE id = ?";
+            $statment = $this->connection->prepare($sql);
+            $statment->execute([$id]);
+
+            if ($row = $statment->fetch()) {
+                return new Comments($row["id"], $row["email"], $row["comment"]);
+            } else {
+                return null;
+            }
         }
 
         public function findAll(): array
         {
-            $comments = [];
-            return $comments;
+            $sql = "SELECT * FROM comments";
+            $statment = $this->connection->query($sql);
+
+            $array = [];
+
+            while ($row = $statment->fetch()) {
+                $array[] = new Comments($row["id"], $row["email"], $row["comment"]);
+            }
+
+            return $array;
         }
     }
 }
